@@ -23,3 +23,15 @@ jobs:
         distribution: 'adopt'
     - name: Build with Maven
       run: mvn clean verify --file pom.xml
+      
+    - name: 'building and pushing image'
+      uses: azure/docker-login@v1
+      with:
+        login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
+        username: ${{ secrets.REGISTRY_USERNAME }}
+        password: ${{ secrets.REGISTRY_PASSWORD }}
+    - run: |
+          docker build ./ -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/java-docker:0.1
+          docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/java-docker:0.1
+      
+      
