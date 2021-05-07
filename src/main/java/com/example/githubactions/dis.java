@@ -36,7 +36,7 @@ public class dis {
 
 	      jwtTokenCookie.setMaxAge(1123424);
 	      jwtTokenCookie.setSecure(true);
-	      jwtTokenCookie.setHttpOnly(true);
+	      //jwtTokenCookie.setHttpOnly(true);
 	      jwtTokenCookie.setPath("/");
 	      jwtTokenCookie.setDomain("friendly-doodle.azurewebsites.net");
 	      response.addCookie(jwtTokenCookie);
