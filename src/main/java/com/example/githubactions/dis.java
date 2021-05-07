@@ -20,6 +20,7 @@ public class dis {
 	public String va() {
 		return "hrllo";
 	}
+	
 	@GetMapping("/testCookie")
 	@CrossOrigin({"http://localhost:3000","http://localhost:44"
 		,"https://friendly-doodle.azurewebsites.net"})
